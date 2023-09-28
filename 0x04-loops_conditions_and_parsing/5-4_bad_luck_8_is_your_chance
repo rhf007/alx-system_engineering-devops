@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+#4 is bad luck, 8 isgood luck, the rest is school. if you know what's behind the numbers you're awesome
+
+i=1
+while ((i <= 10))
+do
+  if ((i == 4))
+  then
+      echo "bad luck"
+  elif ((i == 8))
+  then
+      echo "good luck"
+  else
+      echo "Best School"
+  fi
+  ((i+=1))
+done
