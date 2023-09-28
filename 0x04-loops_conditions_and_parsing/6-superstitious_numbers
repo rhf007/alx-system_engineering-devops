@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#4, 9, 17 are all bad luck... if you know what i mean B)
+
+i=1
+while ((i <= 20))
+do
+  echo "$i"
+  case $i in
+      4)
+        echo "bad luck from China"
+	;;
+      9)
+        echo "bad luck from Japan"
+	;;
+      17)
+        echo "bad luck from Italy"
+	;;
+      *)
+        ;;
+  esac
+  ((i+=1))
+done
