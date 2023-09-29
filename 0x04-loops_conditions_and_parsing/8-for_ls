@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# display files in cwd without the numbers and dash before them
+
+for fl in *
+do
+  echo "$fl" | cut -d'-' -f2
+done
