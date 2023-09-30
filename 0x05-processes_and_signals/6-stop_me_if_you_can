@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#script that stops 4-to_infinity_and_beyond process without kill or killall. "Catch me if you can, Mr. Holmes"
+
+pkill -f "./4-to_infinity_and_beyond"
