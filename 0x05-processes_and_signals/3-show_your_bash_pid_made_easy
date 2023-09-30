@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#same as before without using ps
+
+pgrep -l "bash"
