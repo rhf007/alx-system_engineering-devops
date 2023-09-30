@@ -2,4 +2,4 @@
 #Bash script that stops 4-to_infinity_and_beyond process. Loyalty is hard to find these days
 
 killed=$(pgrep -f 4-to_infinity_and_beyond)
-kill -9 $killed
+kill -9 "$killed"
