@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#Listen... and you'll find your answer
+
+sudo netstat -lp
