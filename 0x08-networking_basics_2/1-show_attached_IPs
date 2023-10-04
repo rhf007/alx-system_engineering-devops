@@ -1,0 +1,4 @@
+#!/usr/bin/env
+# show all attached IPs. heh
+
+ifconfig | grep "inet " | tr ":" " " | awk '{print $3}'
