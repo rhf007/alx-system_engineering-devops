@@ -3,9 +3,9 @@
 
 apt-get update
 apt-get install software-properties-common -y
-add-apt-repository ppa:vbernat/haproxy-2.0 -y
+add-apt-repository ppa:vbernat/haproxy-2.8 -y
 apt-get update
-apt-get install haproxy=2.0.\* -y
+apt-get install haproxy=2.8.\* -y
 echo "frontend web-front
         bind *:80
         default_backend web-backend
