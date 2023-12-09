@@ -105,6 +105,6 @@ This configures a frontend named ```http```, which handles all incoming traffic 
 
 ### Sticky Sessions
 
-Some applications require that a user continues to connect to the same backend server. This can be achieved through sticky sessions, using the ```appsession``` parameter in the backend that requires it.
+Some applications require that a user continues to connect to the same backend server. This can be achieved through sticky sessions, using the ```appsession``` parameter in the backend that requires it
 
 
