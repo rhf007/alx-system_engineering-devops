@@ -1,17 +1,26 @@
 #!/usr/bin/env bash
 #configures a new Ubuntu machine nginx
-apt-get update
-apt-get install software-properties-common -y
-add-apt-repository ppa:vbernat/haproxy-2.6 -y
-apt-get update
-apt-get install haproxy=2.6.\* -y
-echo "frontend web-front
-        bind *:80
-        default_backend web-backend
+sudo apt-get update
+sudo apt-get install -y haproxy
+cat <<EOL | sudo tee /etc/haproxy/haproxy.cfg
+global
+    daemon
+    maxconn 256
 
-backend web-backend
-        balance roundrobin
-        server 408045-web-01 54.164.162.231:80 check
-        server 408045-web-02 54.87.210.192:80 check
-" | sudo tee -a /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+defaults
+    mode http
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+
+frontend http_front
+    bind *:80
+    stats uri /haproxy?stats
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server 408045-web-01 54.164.162.231:80 check
+    server 408045-web-02 54.87.210.192:80 check
+EOL
+sudo service haproxy restart
