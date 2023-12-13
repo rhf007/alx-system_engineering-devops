@@ -1,0 +1,19 @@
+global
+    daemon
+    maxconn 256
+
+defaults
+    mode http
+    timeout connect 5000ms
+    timeout client 50000ms
+    timeout server 50000ms
+
+frontend http_front
+    bind *:443 ssl crt /etc/letsencrypt/live/www.rahaf.tech/www.rahaf.tech.pem
+    stats uri /haproxy?stats
+    default_backend http_back
+
+backend http_back
+    balance roundrobin
+    server 408045-web-01 54.90.4.130:80 check
+    server 408045-web-02 18.204.7.222:80 check
