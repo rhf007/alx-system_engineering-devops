@@ -1,3 +1,0 @@
-# API - Advanced
-
-Boom Boom!
