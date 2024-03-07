@@ -5,8 +5,8 @@
 import requests
 
 
-def number_of_subscribers(subreddit):
-    """getting sub info"""
+def top_ten(subreddit):
+    """getting sub top ten"""
     user_ag = {'User-Agent': 'BW_121'}
     lim = {'limit': 10}
     res = requests.get("https://www.reddit.com/r/{}/hot.json".
