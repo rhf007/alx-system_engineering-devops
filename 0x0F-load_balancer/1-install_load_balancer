@@ -20,7 +20,7 @@ frontend http_front
 
 backend http_back
     balance roundrobin
-    server 408045-web-01 54.90.17.238:80 check
-    server 408045-web-02 34.207.189.132:80 check
+    server 408045-web-01 18.210.19.92:80 check
+    server 408045-web-02 52.3.241.12:80 check
 EOL
 sudo service haproxy restart
