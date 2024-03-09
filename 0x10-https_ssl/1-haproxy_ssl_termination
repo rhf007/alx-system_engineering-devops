@@ -9,11 +9,11 @@ defaults
     timeout server 50000ms
 
 frontend http_front
-    bind *:443 ssl crt /etc/letsencrypt/archive/www.rahaf.tech/www.rahaf.tech.pem
+    bind *:443 ssl crt /etc/letsencrypt/live/www.rahaf.tech/www.rahaf.tech.pem
     stats uri /haproxy?stats
     default_backend http_back
 
 backend http_back
     balance roundrobin
-    server 408045-web-01 54.90.17.238:80 check
-    server 408045-web-02 34.207.189.132:80 check
+    server 408045-web-01 18.210.19.92:80 check
+    server 408045-web-02 52.3.241.12:80 check
